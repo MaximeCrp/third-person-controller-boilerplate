@@ -58,17 +58,20 @@ size = Vector3(1000, 1, 1000)
 [node name="box" type="CSGBox3D" parent="map"]
 transform = Transform3D(0.93089, 0, 0.365299, 0, 1, 0, -0.365299, 0, 0.93089, 3.91596, 0.662174, -3.75506)
 material_override = SubResource("StandardMaterial3D_45237")
+snap = 1e-06
 use_collision = true
 
 [node name="box2" type="CSGBox3D" parent="map"]
-transform = Transform3D(0.670181, 0, 0.742198, 0, 1, 0, -0.742198, 0, 0.670181, -1.6453, 1.23451, 4.00354)
+transform = Transform3D(0.538962, 0, 0.84233, 0, 1, 0, -0.84233, 0, 0.538962, -1.7253, 1.21738, 3.9277)
 material_override = SubResource("StandardMaterial3D_hqrcy")
+snap = 1e-06
 use_collision = true
 size = Vector3(2, 2, 2)
 
 [node name="box3" type="CSGBox3D" parent="map"]
 transform = Transform3D(0.9474, 0, 0.320051, 0, 1, 0, -0.320051, 0, 0.9474, -3.99419, 1.73451, -6.46399)
 material_override = SubResource("StandardMaterial3D_6q2cd")
+snap = 1e-06
 use_collision = true
 size = Vector3(3, 3, 3)
 
