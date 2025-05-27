@@ -11,5 +11,6 @@ Assets are from [Mixamo](https://www.mixamo.com/#/).
 Additional improvements from the tutorial code were added. Thanks to:
 
 - Smooth player visuals rotation:
-  - Original comment from @archums. (https://twitter.com/Malefic_Art)
-  - Code correction from @thaisonlecong9328
+  - Original comment from [@archums.](https://www.youtube.com/@archums.) ([Twitter](https://twitter.com/Malefic_Art))
+  - Code correction from [@thaisonlecong9328](https://www.youtube.com/@thaisonlecong9328)
+- Camera clamp: [@Jingleboy14](https://www.youtube.com/channel/UCcJPD8DbTt6diMVj3JwkCLw)

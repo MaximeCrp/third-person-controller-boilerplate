@@ -7,6 +7,9 @@ extends CharacterBody3D
 const JUMP_VELOCITY = 4.5
 const VISUALS_ROTATION_SMOOTHNESS = 10.0
 
+const CAMERA_CLAMP_MIN = deg_to_rad(-90)
+const CAMERA_CLAMP_MAX = deg_to_rad(45)
+
 var horizontal_mouse_sensitivity = 0.001
 var vertical_mouse_sensitivity = 0.001
 
@@ -27,6 +30,7 @@ func _input(event):
 		rotate_y(-event.relative.x * horizontal_mouse_sensitivity)
 		visuals.rotate_y(event.relative.x * horizontal_mouse_sensitivity)
 		camera_mount.rotate_x(-event.relative.y * vertical_mouse_sensitivity)
+		camera_mount.rotation.x = clamp(camera_mount.rotation.x, CAMERA_CLAMP_MIN, CAMERA_CLAMP_MAX)
 
 
 func _physics_process(delta):
