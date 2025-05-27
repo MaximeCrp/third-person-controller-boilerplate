@@ -5,6 +5,7 @@ extends CharacterBody3D
 @onready var visuals = $visuals
 
 const JUMP_VELOCITY = 4.5
+const VISUALS_ROTATION_SMOOTHNESS = 10.0
 
 var horizontal_mouse_sensitivity = 0.001
 var vertical_mouse_sensitivity = 0.001
@@ -47,6 +48,8 @@ func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
 	var input_dir = Input.get_vector("left", "right", "forward", "backward")
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	var visuals_direction = Vector3(input_dir.x, 0, input_dir.y).normalized()
+
 	if direction:
 		if is_running:
 			if animation_player.current_animation != "running":
@@ -55,7 +58,7 @@ func _physics_process(delta):
 			if animation_player.current_animation != "walking":
 				animation_player.play("walking")
 
-		visuals.look_at(position + direction)
+		visuals.rotation.y = lerp_angle(visuals.rotation.y, atan2(-visuals_direction.x, -visuals_direction.z), delta * VISUALS_ROTATION_SMOOTHNESS)
 
 		velocity.x = direction.x * speed
 		velocity.z = direction.z * speed
